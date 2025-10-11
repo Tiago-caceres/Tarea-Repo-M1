@@ -92,7 +92,7 @@ function renderAll() {
 
   const actividades = repo.getAllActivities();
   if (actividades.length === 0) {
-    lista.innerHTML = "<p>No hay tarjetas todavía.</p>";
+    lista.innerHTML = "<p>No hay tarjetas todavia.</p>";
     return;
     }
 
