@@ -1,4 +1,4 @@
-class Activity {
+class Musica {
   constructor({ id, title, description, imgUrl }) {
     this.id = id;
     this.title = title;
@@ -9,28 +9,28 @@ class Activity {
 
 class Repository {
   constructor() {
-    this.activities = [];
-    this._nextId = 1;
+    this.musicas = [];
+    this.contadorId = 1;
   }
-  getAllActivities() {
-    return this.activities.slice();
+  getAllMusicas() {
+    return this.musicas.slice();
   }
-  createActivity({ title, description, imgUrl }) {
+  createMusica({ title, description, imgUrl }) {
 
-    const activity = new Activity({
-      id: this._nextId++,
+    const musica = new Musica({
+      id: this.contadorId++,
       title,
       description,
       imgUrl: imgUrl || ""
     });
-    this.activities.push(activity);
-    return activity;
+    this.musicas.push(musica);
+    return musica;
   }
   // EXTRA: deleteActivity
-  deleteActivity(id) {
-    const i = this.activities.findIndex(a => a.id === Number(id));
+  deleteMusica(id) {
+    const i = this.musicas.findIndex(a => a.id === Number(id));
     if (i === -1) return false;
-    this.activities.splice(i, 1);
+    this.musicas.splice(i, 1);
     return true;
   }
 }
@@ -42,8 +42,8 @@ const lista = document.getElementById("tarjetas");
 if (lista) lista.classList.add("content");
 
 // ==================== ACTIVIDAD 02 ====================
-function activityToElement(activity) {
-  const { id, title, description, imgUrl } = activity;
+function musicaToElement(musica) {
+  const { id, title, description, imgUrl } = musica;
 
   const tarjeta = document.createElement("section");
   tarjeta.setAttribute("data-id", String(id));
@@ -90,13 +90,13 @@ function renderAll() {
   if (!lista) return;
   lista.innerHTML = "";
 
-  const actividades = repo.getAllActivities();
+  const actividades = repo.getAllMusicas();
   if (actividades.length === 0) {
     lista.innerHTML = "<p>No hay tarjetas todavia.</p>";
     return;
     }
 
-  const nodos = actividades.map(activityToElement);
+  const nodos = actividades.map(musicaToElement);
   nodos.forEach(n => lista.appendChild(n));
 }
 
@@ -117,7 +117,7 @@ function onSubmitCrearActividad(e) {
 
 
   try {
-    repo.createActivity({ title, description, imgUrl });
+    repo.createMusica({ title, description, imgUrl });
     renderAll();
     formulario.reset();
   } catch (err) {
@@ -143,7 +143,7 @@ if (lista) {
     const id = tarjeta ? tarjeta.getAttribute('data-id') : null;
 
     if (id && confirm("¿Borrar esta tarjeta?")) {
-      repo.deleteActivity(Number(id));
+      repo.deleteMusica(Number(id));
       renderAll();
     }
   });
