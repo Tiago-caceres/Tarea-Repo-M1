@@ -211,10 +211,15 @@ section p > a:hover{
   transform: translateY(-1px);
 }
 footer{
+  display: flex;
+  justify-content: center;
   border-top:1px solid rgba(255,255,255,.06);
-  padding: 28px 24px;
+  padding: 15px 25px;
   color: #b4b8c7;
-  text-align:center;
+
+}
+footer h4{
+    font-size: 0.9rem;
 }
 /* ::::::::::::::::: PAGINACIÓN PERSONALIZADA ::::::::::::::::: */
 
@@ -223,13 +228,13 @@ footer{
   font-size: 22px;
   letter-spacing: 0.5px;
   margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 .page-item {
   margin: 0 4px;
 }
 
-/* fondo y color de los links */
 .page-link {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -239,7 +244,7 @@ footer{
   transition: all 0.25s ease-in-out;
 }
 
-/* hover efecto gradiente */
+
 .page-link:hover {
   color: #0b0b10;
   background: linear-gradient(90deg, #7c5cff, #22d3ee);
@@ -248,7 +253,6 @@ footer{
   transform: translateY(-2px);
 }
 
-/* página activa (gradiente fijo) */
 .page-item.active .page-link {
   color: #0b0b10;
   background: linear-gradient(90deg, #7c5cff, #22d3ee);
@@ -256,7 +260,7 @@ footer{
   box-shadow: 0 0 14px rgba(124,92,255,0.35);
 }
 
-/* deshabilitada (anterior) */
+
 .page-item.disabled .page-link {
   background: rgba(255, 255, 255, 0.05);
   color: rgba(255,255,255,0.3);
@@ -266,13 +270,13 @@ footer{
   box-shadow: none;
 }
 
-/* redondeo suave de todo el conjunto */
+
 .pagination .page-link:first-child,
 .pagination .page-link:last-child {
   border-radius: 12px;
 }
 
-/* centrado y espaciado */
+
 .pagination.justify-content-center {
   display: flex;
   justify-content: center;

@@ -298,15 +298,15 @@
         <form id="form-actividad" method="post" class="formulario__form">
             <div class="campo">
             <label for="titulo">Título</label>
-            <input type="text" name="titulo" placeholder="Título..." required autocomplete="off">
+            <input type="text" name="titulo" placeholder="Título..." required >
             </div>
             <div class="campo">
             <label for="descripcion">Descripción</label>
-            <input type="text" name="descripcion" placeholder="Descripción..." required autocomplete="off">
+            <input type="text" name="descripcion" placeholder="Descripción..." required >
             </div>
             <div class="campo">
             <label for="imagen">Imagen URL</label>
-            <input type="url" name="imagen" placeholder="https://..." autocomplete="off">
+            <input type="url" name="imagen" placeholder="https://..." required >
             </div>
             <button type="submit" class="btn">Crear tarjeta</button>
         </form>
@@ -314,8 +314,7 @@
 
         <div class="content" id="tarjetas"></div>
     </main>
-    <footer>
-                <nav aria-label="...">
+    <nav aria-label="...">
         <ul class="pagination pagination-sm justify-content-end">
             <li class="page-item disabled">
             <a class="page-link" href="#" tabindex="-1">Anterior</a>
@@ -330,6 +329,10 @@
             </li>
         </ul>
         </nav>
+    <footer>
+        
+        <h4 >Copyright © ; 2025, Tiago Caceres</h4>
+
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
